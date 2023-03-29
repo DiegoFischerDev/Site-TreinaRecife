@@ -1,20 +1,22 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Cursos from "./paginas/Cursos";
-import Home from "./paginas/Home";
-import Consultoria from "./paginas/Consultoria";
+import Cursos from "./pages/Cursos";
+import Home from "./pages/Home";
+import Consultoria from "./pages/Consultoria";
 import Cabecalho from "./componentes/Cabecalho";
 import Rodape from "./componentes/Rodape";
-import Login from "./paginas/Login";
+import Login from "./pages/Login";
 import GlobalVariables from "./contexts";
-import Outros from "./paginas/Outros";
+import Outros from "./pages/Outros";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Error from "./paginas/Error";
+import Error from "./pages/Error";
+import NavMenu from "./componentes/NavMenu";
 
 const App = () => {
   return (
     <GlobalVariables>
     <BrowserRouter>
-      <Cabecalho />
+      {/* <Cabecalho /> */}
+      <NavMenu />
       <div style={{paddingTop: 65}}>
         <Routes>
           <Route path="/" element={<Home />} />

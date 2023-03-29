@@ -1,8 +1,96 @@
 /* ************************ ROOT ***************************** */
 
+:root {
+  --dark: #212529;
+  --blue: #7FD8D1;
+  --grey: #EFEFEF;
+  --darkGrey: #8e8e8e;
+  --hover: #05B1AC;
+  --white: #FFFFFF;
+
+  --menu-height: 65px;
+  --paddingHorizontal: 0 60px;
+
+  font-family: sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
 .shadown {
   -webkit-box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.33); 
   box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.33);
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ************************ NavMenu ***************************** */
+
+.NavMenu-container {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  background-color: var(--dark);
+  height: var(--menu-height);
+  padding: var(--paddingHorizontal);
+  flex-direction: row;
+  justify-content: start;
+  color: var(--grey);
+}
+
+.NavMenu-container .logo{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 280px;
+  cursor: pointer;
+  margin: 0 30px;
+}
+
+.NavMenu-container .logo img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logo h2 {
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--grey);
+  margin-top: 5px;
+}
+
+.menu-itens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* background-color: red; */
+  width: 300px;
+}
+
+.menu-itens .link{
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--darkGrey);
+}
+
+.menu-itens .link:hover {
+  color: var(--grey);
+}
+
+.menu-itens .active {
+  color: var(--grey);
 }
 
 /* ************************ CABEÇALHO ***************************** */
@@ -41,3 +129,14 @@
   justify-content: center;
 }
 
+
+/* *************************** ADD CURSO ****************************** */
+
+.add-curso-input {
+  width: 100%;
+}
+
+.add-curso-input::placeholder {
+  color: red;
+  opacity: 0.2;
+}

@@ -18,43 +18,43 @@ const Home = () => {
 
 
       <div>
-        <div class="container px-4 py-5">
-          <h2 style={{ textAlign: "center" }} class="pb-2 border-bottom">Cursos Presenciais Em Recife</h2>
+        <div className="container px-4 py-5">
+          <h2 style={{ textAlign: "center" }} className="pb-2 border-bottom">Cursos Presenciais Em Recife</h2>
 
-          <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 
-            <Link to="/curso" class="col" style={{ cursor: "pointer", textDecoration: "none" }}>
-              <div class="home-card card h-100 rounded-4 shadow-lg" >
+            <Link to="/curso" className="col" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <div className="home-card card h-100 rounded-4 shadow-lg" >
                 <img src="https://res.cloudinary.com/di9oiqvom/image/upload/v1679857845/imagem1_y009rk.png" />
               </div>
             </Link>
 
-            <Link to="/curso" class="col" style={{ cursor: "pointer", textDecoration: "none" }}>
-              <div class="home-card card h-100 rounded-4 shadow-lg" >
+            <Link to="/curso" className="col" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <div className="home-card card h-100 rounded-4 shadow-lg" >
                 <img src="https://res.cloudinary.com/di9oiqvom/image/upload/v1679857844/imagem2_leibf1.png" />
               </div>
             </Link>
 
-            <Link to="/curso" class="col" style={{ cursor: "pointer", textDecoration: "none" }}>
-              <div class="home-card card h-100 rounded-4 shadow-lg" >
+            <Link to="/curso" className="col" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <div className="home-card card h-100 rounded-4 shadow-lg" >
                 <img src="https://res.cloudinary.com/di9oiqvom/image/upload/v1679857846/imagem3_mh3umb.png" />
               </div>
             </Link>
 
-            <Link to="/curso" class="col" style={{ cursor: "pointer", textDecoration: "none" }}>
-              <div class="home-card card h-100 rounded-4 shadow-lg" >
+            <Link to="/curso" className="col" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <div className="home-card card h-100 rounded-4 shadow-lg" >
                 <img src="https://d335luupugsy2.cloudfront.net/cms/files/266511/1672675817/$pxh30v9jsvj" />
               </div>
             </Link>
 
-            <Link to="/curso" class="col" style={{ cursor: "pointer", textDecoration: "none" }}>
-              <div class="home-card card h-100 rounded-4 shadow-lg" >
+            <Link to="/curso" className="col" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <div className="home-card card h-100 rounded-4 shadow-lg" >
                 <img src="https://d335luupugsy2.cloudfront.net/cms/files/266511/1673549673/$1fd0109wg7m" />
               </div>
             </Link>
 
-            <Link to="/curso" class="col" style={{ cursor: "pointer", textDecoration: "none" }}>
-              <div class="home-card card h-100 rounded-4 shadow-lg" >
+            <Link to="/curso" className="col" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <div className="home-card card h-100 rounded-4 shadow-lg" >
                 <img src="https://d335luupugsy2.cloudfront.net/cms/files/266511/1677870664/$ujok08bv53e" />
               </div>
             </Link>
@@ -65,7 +65,7 @@ const Home = () => {
 
       <div className="container marketing py-5">
         <div className="row">
-          <h2 style={{ textAlign: "center" }} class="pb-2 border-bottom">Depoimentos</h2>
+          <h2 style={{ textAlign: "center" }} className="pb-2 border-bottom">Depoimentos</h2>
           <div className="col-lg-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: 50 }}>
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Foto_Perfil.jpg" style={{ width: 150, height: 150, borderRadius: "50%" }} />
             <h2 className="fw-normal">Diego Fischer</h2>
