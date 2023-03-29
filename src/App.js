@@ -4,12 +4,12 @@ import Home from "./pages/Home";
 import Consultoria from "./pages/Consultoria";
 import Cabecalho from "./componentes/Cabecalho";
 import Rodape from "./componentes/Rodape";
-import Login from "./pages/Login";
 import GlobalVariables from "./contexts";
 import Outros from "./pages/Outros";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Error from "./pages/Error";
 import NavMenu from "./componentes/NavMenu";
+import PerfilDoUsuario from "./pages/PerfilDoUsuario";
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/consultoria" element={<Consultoria />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/perfildousuario" element={<PerfilDoUsuario />} />
           <Route path="/outros" element={<Outros />} />
 
           <Route path="*" element={<Error />} />

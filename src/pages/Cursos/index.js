@@ -5,7 +5,7 @@ import { globalContext } from "../../contexts";
 
 const Cursos = () => {
 
-  const { cursos, userName } = useContext(globalContext);
+  const { cursos, admLogado } = useContext(globalContext);
   
   const [showAddCurso, setShowAddCurso] = useState(false);
 
@@ -22,7 +22,7 @@ const Cursos = () => {
         )
       })}
 
-      {(userName == 'Admin') && <button onClick={()=>{setShowAddCurso(true)}}>Adicionar Novo Curso</button>}
+      {admLogado && <button onClick={()=>{setShowAddCurso(true)}}>Adicionar Novo Curso</button>}
       {showAddCurso && <AddCurso setShowAddCurso={setShowAddCurso} />}
       
 

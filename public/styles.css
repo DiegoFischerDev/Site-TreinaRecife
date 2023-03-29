@@ -44,7 +44,7 @@ a:-webkit-any-link {
   height: var(--menu-height);
   padding: var(--paddingHorizontal);
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   color: var(--grey);
 }
 
@@ -74,8 +74,8 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* background-color: red; */
-  width: 300px;
+  width: 400px;
+  align-items: center;
 }
 
 .menu-itens .link{
@@ -93,26 +93,20 @@ a:-webkit-any-link {
   color: var(--grey);
 }
 
-/* ************************ CABEÇALHO ***************************** */
-
-.cabecalhoLogin {
+.NavMenu-Login {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cabecalhoLogin img {
-  width: 35px !important;
-  height: 35px;
+.NavMenu-Login img {
+  width: 35px;
   border-radius: 50%;
+  margin: 0 8px;
 }
 
-.cabecalhoLogin a {
+.NavMenu-Login a {
   font-size: 15px;
-}
-
-.Link {
-  color: white;
 }
 
 /* *************************** RODAPE ****************************** */
