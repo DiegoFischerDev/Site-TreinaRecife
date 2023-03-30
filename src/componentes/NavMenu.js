@@ -4,10 +4,13 @@ import { globalContext } from "../contexts";
 
 function NavMenu() {
 
-  const { handleClick, active, userName, setCursoSelecionado, setActive, cursos } = useContext(globalContext)
+  const { handleClick, active, userName, setCursoSelecionado, setActive, cursos, modoEdit } = useContext(globalContext)
 
   return (
-    <div className='NavMenu-container'>
+    <div className='NavMenu-container' style={{position: "relative"}}>
+
+      {modoEdit && <div style={{position: "absolute", top: 0, left: 0, backgroundColor: "black", width: "100%", height: "100%", zIndex: 3, opacity: 0.7, display: "flex", alignItems: "center", justifyContent: "center"}}><h2>Modo Edição</h2></div>}
+
 
       <div className='logo'>
         <img src="https://res.cloudinary.com/di9oiqvom/image/upload/v1678321594/download_srp5sa.png" />

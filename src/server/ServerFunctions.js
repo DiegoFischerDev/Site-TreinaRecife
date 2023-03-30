@@ -97,7 +97,7 @@ async function buscarCursos(setCursos) {
 
 }
 
-async function cadastrarCurso(imagem, titulo, professor, preco, desconto, dias, horario, totalDeSemanas, proximaTurma, descricao, publicoAlvo, preRequisitos, ementa) {
+async function cadastrarCurso(setCursos, imagem, titulo, professor, preco, desconto, dias, horario, totalDeSemanas, proximaTurma, descricao, publicoAlvo, preRequisitos, ementa) {
 
   await addDoc(collection(db, "ListaDeCursos"), {
     imagem: imagem,
@@ -115,11 +115,39 @@ async function cadastrarCurso(imagem, titulo, professor, preco, desconto, dias, 
     ementa: ementa
   })
     .then(() => {
-      alert("Cadastrado com sucesso!");
+      alert("Curso cadastrado com sucesso!");
+      buscarCursos(setCursos);
     })
     .catch((error) => {
       console.log(`deu erro: ${error}`)
     })
 }
 
-export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario }
+async function editarCurso(setCursos, idDoCurso, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta) {
+  const docRef = doc(db, "ListaDeCursos", idDoCurso)
+
+  await updateDoc(docRef, {
+    imagem: newImagem,
+    titulo: newTitulo,
+    professor: newProfessor,
+    preco: newPreco,
+    desconto: newDesconto,
+    dias: newDias,
+    horario: newHorario,
+    totalDeSemanas: newTotalDeSemanas,
+    proximaTurma: newProximaTurma,
+    descricao: newDescricao,
+    publicoAlvo: newPublicoAlvo,
+    preRequisitos: newPreRequisitos,
+    ementa: newEmenta
+  })
+    .then(() => {
+      alert("Curso Atualizado!");
+      buscarCursos(setCursos);
+    })
+    .catch((error) => {
+      console.log(`deu erro: ${error}`)
+    })
+}
+
+export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso }

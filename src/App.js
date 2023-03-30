@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Cursos from "./pages/Cursos";
 import Home from "./pages/Home";
 import Consultoria from "./pages/Consultoria";
-import Cabecalho from "./componentes/Cabecalho";
 import Rodape from "./componentes/Rodape";
 import GlobalVariables from "./contexts";
 import Outros from "./pages/Outros";
@@ -15,7 +14,6 @@ const App = () => {
   return (
     <GlobalVariables>
     <BrowserRouter>
-      {/* <Cabecalho /> */}
       <NavMenu />
       <div style={{paddingTop: 65}}>
         <Routes>

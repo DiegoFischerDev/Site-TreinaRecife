@@ -8,8 +8,10 @@ const GlobalVariables = ({ children }) => {
   const [active, setActive] = useState("home");
   const handleClick = (event) => {setActive(event.target.name); document.querySelector('.dropdown-menu').classList.remove("show")};
   const [userName, setUserName] = useState('Login');
-  const [admLogado, setAdmLogado] = useState(false);
-  const [cursoSelecionado, setCursoSelecionado] = useState(1);
+  const [admLogado, setAdmLogado] = useState(true);
+  const [cursoSelecionado, setCursoSelecionado] = useState("BwcKtuaIEGGC1fTeqluO");
+
+  const [modoEdit, setModoEdit] = useState(true)
 
   const [cursos, setCursos] = useState([]);
 
@@ -18,7 +20,7 @@ const GlobalVariables = ({ children }) => {
   }, [])
 
   return (
-    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, admLogado, setAdmLogado }}>
+    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, admLogado, setAdmLogado, modoEdit, setModoEdit, setCursos }}>
       {children}
     </globalContext.Provider>
   )

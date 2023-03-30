@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from "react";
 import { cadastrarCurso } from '../server/ServerFunctions'
+import { globalContext } from "../contexts";
 
 
 const AddCurso = (props) => {
+
+  const { setCursos } = useContext(globalContext);
 
   const [titulo, setTitulo] = useState("");
   const [professor, setProfessor] = useState("");
@@ -70,7 +73,7 @@ const AddCurso = (props) => {
       </div>
       
       <br/><br/>
-      <button onClick={()=>{cadastrarCurso(imagem, titulo, professor, preco, desconto, dias, horario, totalDeSemanas, proximaTurma, descricao, publicoAlvo, preRequisitos, ementa)}}>Salvar</button>
+      <button onClick={()=>{cadastrarCurso(setCursos, imagem, titulo, professor, preco, desconto, dias, horario, totalDeSemanas, proximaTurma, descricao, publicoAlvo, preRequisitos, ementa)}}>Salvar</button>
       <br/><br/>
       <button onClick={()=>{props.setShowAddCurso(false)}}>Cancelar</button>
     </div>
