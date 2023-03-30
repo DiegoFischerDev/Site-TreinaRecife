@@ -10,10 +10,10 @@ const Home = () => {
   const { userName } = useContext(globalContext);
 
   return (
-    <div>
+    <div className="home-container">
 
-      <div style={{ display: "flex", justifyContent: "center", paddingTop: 50, zIndex: 3 }}>
-        <img style={{ width: "90%", maxWidth: 500 }} src="https://res.cloudinary.com/di9oiqvom/image/upload/v1679184166/treinaRecife_quadrada_sowznb.png" />
+      <div>
+        <img className="logo-treina-recife" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1679184166/treinaRecife_quadrada_sowznb.png" alt="Logo Treina Recife" />
       </div>
 
 
