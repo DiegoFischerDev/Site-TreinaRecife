@@ -4,12 +4,12 @@ import { globalContext } from "../contexts";
 
 const Rodape = () => {
 
-  const { handleClick, active, modoEdit } = useContext(globalContext)
+  const { handleClick, active, modoEditCurso } = useContext(globalContext)
 
   return (
     <div className="container" style={{position: "relative"}}>
 
-      {modoEdit && <div style={{ position: "absolute", top: 0, left: 0, backgroundColor: "black", width: "100%", height: "100%", zIndex: 3, opacity: 0.7, display: "flex", alignItems: "center", justifyContent: "center" }}></div>}
+      {modoEditCurso && <div style={{ position: "absolute", top: 0, left: 0, backgroundColor: "black", width: "100%", height: "100%", zIndex: 3, display: "flex", alignItems: "center", justifyContent: "center" }}>Você está no BackEnd da Treina Recife</div>}
 
       <footer className="py-3 my-4">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3 text-white" >

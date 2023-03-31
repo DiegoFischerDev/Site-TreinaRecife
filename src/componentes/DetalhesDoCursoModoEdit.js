@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { editarCurso } from '../server/ServerFunctions'
+import { editarCurso, cadastrarCurso } from '../server/ServerFunctions'
 
 function DetalhesDoCursoModoEdit(props) {
 
@@ -20,9 +20,15 @@ function DetalhesDoCursoModoEdit(props) {
 
   const [showModalEditarImagem, setShowModalEditarImagem] = useState(false);
 
-  function HandleSalvar() {
-    editarCurso(props.setCursos, idDoCurso, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
-    props.setModoEdit(false);
+
+  function HandleEnviar() {
+    if(props.CadastrarOuEditar == "Editar"){
+      editarCurso(props.setCursos, idDoCurso, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
+    }
+    if(props.CadastrarOuEditar == "Cadastrar"){
+      cadastrarCurso(props.setCursos, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
+    }
+    props.setModoEditCurso(false);
   }
 
   let TextDesconto = "";
@@ -39,7 +45,7 @@ function DetalhesDoCursoModoEdit(props) {
         <header>
 
           <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <input className="display-4 fw-normal" onChange={(e) => { setNewTitulo(e.target.value) }} value={newTitulo} />
+            <input style={{width: "100%"}} className="display-4 fw-normal" onChange={(e) => { setNewTitulo(e.target.value) }} value={newTitulo} />
             {/* <h1 className="display-4 fw-normal">{props.cursoInfo.titulo}</h1> */}
             <textarea style={{ width: "100%", height: 100, marginTop: 40 }} className="s-5 text-muted" onChange={(e) => { setNewDescricao(e.target.value) }} value={newDescricao} />
           </div>
@@ -97,33 +103,26 @@ function DetalhesDoCursoModoEdit(props) {
       </div>
 
       <div className="container px-4" >
-        <div className="row g-4 py-2 row-cols-1 row-cols-lg-3" style={{height: 300}}>
-          <div className="feature col">
-            <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-            </div>
+        <div className="row g-4 row-cols-1 row-cols-lg-3" style={{height: 300}}>
+          <div style={{marginTop: 40}}>
             <h3 className="fs-2">Público Alvo</h3>
             <textarea style={{width: '100%', height: "100%"}} value={newPublicoAlvo} onChange={(e)=>{setNewPublicoAlvo(e.target.value)}}></textarea>
-
           </div>
-          <div className="feature col">
-            <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-            </div>
+
+          <div style={{marginTop: 40}}>
             <h3 className="fs-2">Pre-Requisitos</h3>
             <textarea style={{width: '100%', height: "100%"}} value={newPreRequisitos} onChange={(e)=>{setNewPreRequisitos(e.target.value)}}></textarea>
-
           </div>
-          <div className="feature col">
-            <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-            </div>
+
+          <div style={{marginTop: 40}}>
             <h3 className="fs-2">Ementa</h3>
             <textarea style={{width: '100%', height: "100%"}} value={newEmenta} onChange={(e)=>{setNewEmenta(e.target.value)}}></textarea>
-
           </div>
         </div>
       </div>
-      <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", margin: "auto", paddingTop: 100 }}>
-        <button onClick={HandleSalvar} style={{ padding: 20, backgroundColor: "greenyellow", borderRadius: 15 }}>Salvar Alterações</button>
-        <button onClick={() => { props.setModoEdit(false) }} style={{ padding: 20, backgroundColor: "#f8d0b2", borderRadius: 15 }}>Cancelar Alterações</button>
+      <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", marginTop: 150, marginInline: "auto" }}>
+        <button onClick={HandleEnviar} style={{ padding: 20, backgroundColor: "greenyellow", borderRadius: 15 }}>{props.CadastrarOuEditar == "Editar" && "Editar Curso"}{props.CadastrarOuEditar == "Cadastrar" && "Cadastrar Curso"}</button>
+        <button onClick={() => { props.setModoEditCurso(false) }} style={{ padding: 20, backgroundColor: "#f8d0b2", borderRadius: 15 }}>Cancelar</button>
       </div>
     </div>
   )

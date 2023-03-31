@@ -24,7 +24,7 @@ async function cadastrarUsuario(email, senha) {
     })
 }
 
-async function logarUsuario(email, senha, setUserName, setAdmLogado) {
+async function logarUsuario(email, senha, setUserName) {
 
   await signInWithEmailAndPassword(auth, email, senha)
     .then((value) => {
@@ -32,7 +32,6 @@ async function logarUsuario(email, senha, setUserName, setAdmLogado) {
       console.log(value.user);
 
       if (value.user.email == 'admin@admin.com'){
-        setAdmLogado(true);
         setUserName("Admin");
       } else {
         setUserName(value.user.email)
@@ -42,8 +41,6 @@ async function logarUsuario(email, senha, setUserName, setAdmLogado) {
       //   uid: value.user.uid,
       //   email: value.user.email
       // });
-
-      // setUserLogado(true);
     })
     .catch((error) => {
       if (error.code === 'auth/wrong-password')

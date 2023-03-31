@@ -1,31 +1,34 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AddCurso from '../../componentes/AddCurso';
 import { globalContext } from "../../contexts";
-
 
 const Cursos = () => {
 
-  const { cursos, admLogado } = useContext(globalContext);
-  
-  const [showAddCurso, setShowAddCurso] = useState(false);
+  const { cursosOrdenados } = useContext(globalContext);
+
+  const hoje = new Date();
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "auto", marginTop: 50, marginBottom: 150 }}>
-      <h1>Lista de Cursos</h1>
+    <div>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "auto", marginBottom: 150 }}>
+        <h2>Agenda de Cursos Treina Recife</h2>
 
-      {cursos?.map((curso) => {
-        return (
-          <div key={curso.id}>
-            <span>{curso.titulo}</span>
-            <br />
-          </div>
-        )
-      })}
-
-      {admLogado && <button onClick={()=>{setShowAddCurso(true)}}>Adicionar Novo Curso</button>}
-      {showAddCurso && <AddCurso setShowAddCurso={setShowAddCurso} />}
-      
-
+        <div>
+          {cursosOrdenados?.map((curso) => {
+            if (curso.DataDaProximaTurma > hoje)
+            return (
+              <div className='agendaDeCursosCard' key={curso.id} >
+                <div className='agendaCursosImgTituloContainer'>
+                  <img style={{ width: 100, height: 60, padding: 5 }} src={curso.imagem} />
+                  <span style={{ marginInline: 10, fontSize: 18 }}><strong>{curso.titulo}</strong></span>
+                </div>
+                  <span style={{ marginInline: 10, fontSize: 18 }}>Início: <strong>{curso.proximaTurma}</strong></span>
+                  <span style={{ marginInline: 10, fontSize: 18 }}>{curso.dias} {curso.horario}</span>
+                <button className='botaoGreen'>Matricule-se Agora! &#128640;</button> 
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }

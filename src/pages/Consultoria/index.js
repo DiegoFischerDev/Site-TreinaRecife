@@ -5,7 +5,7 @@ const Consultoria = () => {
     <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
       <h2 style={{marginTop: 50, textAlign: "center"}}>Consultoria Para Empresas</h2>
 
-      <div className="shadown" style={{ border: '1px solid #E4E2E2', borderRadius: 10, marginTop: 50, padding: 20, maxWidth: 1000, marginBottom: 30}}>
+      <div style={{ border: '1px solid #E4E2E2', borderRadius: 10, marginTop: 50, padding: 20, maxWidth: 1000, marginBottom: 30}}>
       <p style={{textAlign: "justify"}}>A Treina Recife desenvolveu um Programa que combina recrutamento com capacitação. Nós selecionamos os candidatos a desenvolvedores e submetemos a testes. Os classificados participam de treinamento, custeado pela empresa parceira, com possibilidade de contratação dependendo da performance do aluno. O treinamento é baseado na tecnologia que a empresa parceira utiliza. Ao longo do processo, são analisados os hard e soft skills. 
       </p>
       </div>

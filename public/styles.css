@@ -2,11 +2,17 @@
 
 :root {
   --dark: #212529;
-  --blue: #7FD8D1;
+  --primary: #ef9146;
+  --secundary: #001681;
   --grey: #EFEFEF;
-  --darkGrey: #8e8e8e;
-  --hover: #05B1AC;
+  --darkGrey: #797979;
+  --hover: #e8f0fe;
   --white: #FFFFFF;
+  --green: #bffb6d;
+  --darkGreen: #9efe16;
+
+  --backEnd: #f8d0b2;
+  --backEndHover: #f5c19a;
 
   --menu-height: 65px;
   --paddingHorizontal: 0 60px;
@@ -32,6 +38,62 @@ body {
 a:-webkit-any-link {
   text-decoration: none;
   cursor: pointer;
+}
+
+button {
+  opacity: 0.7;
+}
+
+button:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* ************************ Modal e Botões ***************************** */
+
+.modalExcluirCurso {
+  background-color: var(--white);
+  width: 400px;
+  height: 180px;
+  padding: 20px;
+  position: absolute;
+  top: 20vh;
+  left: calc(50vw - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.botaoNeutro {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--backEnd);
+  margin: 8px;
+}
+
+.botaoNeutro:hover {
+  background-color: var(--backEndHover);
+}
+
+.botaoGreen {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--green);
+  margin: 8px;
+  opacity: 1;
+}
+
+.botaoGreen:hover {
+  background-color: var(--darkGreen);
+}
+
+.botaoPequeno {
+  padding: 3px;
+  border-radius: 5px;
+  margin: 3px;
 }
 
 /* ************************ NavMenu ***************************** */
@@ -72,13 +134,12 @@ a:-webkit-any-link {
 .menu-itens-web {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 400px;
   align-items: center;
 }
 
 .link{
   font-size: 15px;
+  margin: 0 7px;
   text-decoration: none;
   font-weight: normal;
   color: var(--darkGrey);
@@ -123,6 +184,10 @@ a:-webkit-any-link {
   .logo {
     margin: 0;
     margin-top: 5px;
+  }
+
+  .logo .link {
+    padding: 0;
   }
 
   .NavMenu-container .logo img {
@@ -170,15 +235,36 @@ a:-webkit-any-link {
 }
 
 
-/* *************************** ADD CURSO ****************************** */
+/* *************************** Cursos ****************************** */
 
-.add-curso-input {
-  width: 100%;
+.agendaDeCursosCard {
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #E8F0FE;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.add-curso-input::placeholder {
-  color: red;
-  opacity: 0.2;
+.agendaCursosImgTituloContainer {
+  min-width: 220px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+
+  .agendaDeCursosCard {
+    flex-direction: column;
+  }
+
+  .agendaCursosImgTituloContainer {
+    flex-direction: column;
+  }
+
 }
 
 /* *************************** Home ****************************** */
