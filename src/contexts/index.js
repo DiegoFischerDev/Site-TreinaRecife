@@ -25,14 +25,14 @@ const GlobalVariables = ({ children }) => {
     curso.DataDaProximaTurma = new Date(`${array[2]}-${array[1]}-${array[0]}`)
   })
 
-  let cursosOrdenados = listaDeCursos.sort(function(a, b){
+  let cursosOrdenadosPorData = listaDeCursos.sort(function(a, b){
     if (a.DataDaProximaTurma > b.DataDaProximaTurma) return 1;
     if (a.DataDaProximaTurma < b.DataDaProximaTurma) return -1;
     if (a.DataDaProximaTurma == b.DataDaProximaTurma) return 0;
   })
 
   return (
-    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenados }}>
+    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData }}>
       {children}
     </globalContext.Provider>
   )

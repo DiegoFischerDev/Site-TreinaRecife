@@ -3,7 +3,7 @@ import { globalContext } from "../../contexts";
 
 const Cursos = () => {
 
-  const { cursosOrdenados } = useContext(globalContext);
+  const { cursosOrdenadosPorData } = useContext(globalContext);
 
   const hoje = new Date();
 
@@ -13,7 +13,7 @@ const Cursos = () => {
         <h2>Agenda de Cursos Treina Recife</h2>
 
         <div>
-          {cursosOrdenados?.map((curso) => {
+          {cursosOrdenadosPorData?.map((curso) => {
             if (curso.DataDaProximaTurma > hoje)
             return (
               <div className='agendaDeCursosCard' key={curso.id} >

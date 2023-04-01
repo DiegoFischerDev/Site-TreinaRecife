@@ -147,4 +147,18 @@ async function editarCurso(setCursos, idDoCurso, newImagem, newTitulo, newProfes
     })
 }
 
-export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso }
+async function excluirCurso(id, setCursos) {
+  const docRef = doc(db, "ListaDeCursos", id)
+
+  await deleteDoc(docRef)
+    .then(() => {
+      buscarCursos(setCursos);
+      alert("Curso Excluido Com Sucesso")
+    })
+    .catch((error) => {
+      alert(`Erro ao tentar excluir: ${error}`)
+    })
+
+}
+
+export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso }

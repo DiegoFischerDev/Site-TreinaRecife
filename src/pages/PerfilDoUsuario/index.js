@@ -3,10 +3,11 @@ import LoginForm from '../../componentes/LoginForm';
 import DetalhesDoCursoModoEdit from '../../componentes/DetalhesDoCursoModoEdit';
 import { globalContext } from "../../contexts";
 import { cursoPadrao } from '../../mocks/cursos'
+import ModalExcluirCurso from '../../componentes/ModalExcluirCurso';
 
 const PerfilDoUsuario = () => {
 
-  const { userName, cursos, modoEditCurso, setModoEditCurso, setCursos, cursoSelecionado } = useContext(globalContext);
+  const { userName, cursos, modoEditCurso, setModoEditCurso, setCursos, cursoSelecionado, cursosOrdenadosPorData } = useContext(globalContext);
 
   const [CadastrarOuEditar, setCadastrarOuEditar] = useState("Cadastrar");
   const [cursoInfo, setCursoInfo] = useState(cursoPadrao);
@@ -21,22 +22,25 @@ const PerfilDoUsuario = () => {
 
           <h1>Bem Vindo {userName}</h1>
 
-          <h2 style={{marginTop: 40}}>Lista de Cursos</h2>
+          <h2 style={{marginTop: 40}}>Lista de Cursos Abertos</h2>
           <div>
-            {cursos?.map((curso) => {
-              return (
-                <div key={curso.id} style={{ border: "solid", borderRadius: 10, margin: 3, backgroundColor: "#E8F0FE" }}>
-                  <button className='botaoNeutro botaoPequeno' onClick={() => { setModoEditCurso(true); setCadastrarOuEditar("Editar"); setCursoInfo(curso) }}>Editar</button>
-                  <button className='botaoNeutro botaoPequeno' onClick={() => { setCursoInfo(curso); setModalExcluirCurso(true) }}>Excluir</button>
-                  <button className='botaoNeutro botaoPequeno' onClick={() => { }}>Ver Alunos</button>
-                  <img style={{ marginLeft: 15, width: 50, height: 30 }} src={curso.imagem} />
+          {cursosOrdenadosPorData?.map((curso) => {
+            return (
+              <div className='agendaDeCursosCard' key={curso.id} >
+                <div className='agendaCursosImgTituloContainer'>
+                  <img style={{ width: 100, height: 60, padding: 5 }} src={curso.imagem} />
                   <span style={{ marginInline: 10, fontSize: 18 }}><strong>{curso.titulo}</strong></span>
-                  <span style={{ marginInline: 10, fontSize: 18 }}>{curso.proximaTurma}</span>
-                  <span style={{ marginInline: 10, fontSize: 18 }}>{curso.horario}</span>
-                  <br />
                 </div>
-              )
-            })}
+                  <span style={{ marginInline: 10, fontSize: 18 }}>Início: <strong>{curso.proximaTurma}</strong></span>
+                  <span style={{ marginInline: 10, fontSize: 18 }}>{curso.dias} {curso.horario}</span>
+                  <div>
+                    <button className='botaoNeutro' onClick={() => { setModoEditCurso(true); setCadastrarOuEditar("Editar"); setCursoInfo(curso) }}>Editar</button>
+                    <button className='botaoNeutro' onClick={() => { setCursoInfo(curso); setModalExcluirCurso(true) }}>Excluir</button>
+                    <button className='botaoNeutro' onClick={() => { }}>Ver Alunos</button>
+                  </div>
+              </div>
+            )
+          })}
           </div>
           <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", margin: "auto" }}>
             <button className='botaoNeutro' onClick={() => { setModoEditCurso(true); setCadastrarOuEditar("Cadastrar"); setCursoInfo(cursoPadrao) }}>Cadastrar Novo Curso (Admin)</button>
@@ -46,15 +50,7 @@ const PerfilDoUsuario = () => {
           <h2 style={{marginTop: 40}}>Lista de Alunos</h2>
 
           {modalExcluirCurso &&
-            <div className='shadown modalExcluirCurso'>
-              <div><h4>BackEnd</h4></div>
-              <span>Tem Certeza que deseja excluir o curso</span>
-              <span><strong style={{ fontSize: 20 }}>{cursoInfo.titulo}</strong>?</span>
-              <div>
-                <button className='botaoNeutro' style={{ paddingInline: 18 }} >Excluir</button>
-                <button className='botaoNeutro' onClick={() => { setModalExcluirCurso(false) }}>Cancelar</button>
-              </div>
-            </div>
+            <ModalExcluirCurso titulo={cursoInfo.titulo} id={cursoInfo.id} setModalExcluirCurso={setModalExcluirCurso} setCursos={setCursos} />
           }
 
         </div>
