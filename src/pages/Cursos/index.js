@@ -23,7 +23,7 @@ const Cursos = () => {
                 </div>
                   <span style={{ marginInline: 10, fontSize: 18 }}>Início: <strong>{curso.proximaTurma}</strong></span>
                   <span style={{ marginInline: 10, fontSize: 18 }}>{curso.dias} {curso.horario}</span>
-                <button className='botaoGreen'>Matricule-se Agora! &#128640;</button> 
+                <button className='botaoBlue'>Matricule-se Agora! &#128640;</button> 
               </div>
             )
           })}

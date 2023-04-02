@@ -161,4 +161,19 @@ async function excluirCurso(id, setCursos) {
 
 }
 
-export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso }
+async function cadastrarProfessor(nome, imagem, biografia) {
+
+  await addDoc(collection(db, "Professores"), {
+    imagem: imagem,
+    nome: nome,
+    biografia: biografia,
+  })
+    .then(() => {
+      alert("Professor cadastrado com sucesso!");
+    })
+    .catch((error) => {
+      console.log(`deu erro: ${error}`)
+    })
+}
+
+export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso, cadastrarProfessor }

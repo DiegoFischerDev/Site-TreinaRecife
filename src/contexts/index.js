@@ -7,7 +7,7 @@ const GlobalVariables = ({ children }) => {
 
   const [active, setActive] = useState("home");
   const handleClick = (event) => {setActive(event.target.name); document.querySelector('.dropdown-menu').classList.remove("show")};
-  const [userName, setUserName] = useState('Login');
+  const [userName, setUserName] = useState('Admin');
   const [modoEditCurso, setModoEditCurso] = useState(false);
   const [cursoSelecionado, setCursoSelecionado] = useState("BwcKtuaIEGGC1fTeqluO");
   const [cursos, setCursos] = useState([]);

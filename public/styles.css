@@ -49,6 +49,18 @@ button:hover {
   transition: 0.3s;
 }
 
+@media (max-width: 800px) { 
+  button {
+    opacity: 1; /* Por Causa do Toutch */ 
+  }
+}
+
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ************************ Modal e Botões ***************************** */
 
 .modalExcluirCurso {
@@ -56,15 +68,17 @@ button:hover {
   width: 400px;
   height: 180px;
   padding: 20px;
-  position: absolute;
-  top: 20vh;
+  position: sticky;
+  margin-top: -180px;
+  top: 200px;
   left: calc(50vw - 200px);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
   border-radius: 10px;
-  z-index: 2;
+  z-index: 3;
+  filter: blur(0) !important;
 }
 
 .botaoNeutro {
@@ -88,6 +102,14 @@ button:hover {
 
 .botaoGreen:hover {
   background-color: var(--darkGreen);
+}
+
+.botaoBlue {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  margin: 8px;
 }
 
 .botaoPequeno {
@@ -274,4 +296,25 @@ button:hover {
   max-width: 500px;
   display: flex;
   margin: auto;
+}
+
+/* *************************** PerfilDoUsuario ****************************** */
+
+.admin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 150px;
+  width: 100%;
+}
+
+.admListaDeCursos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  margin-top: 40px;
 }
