@@ -8,26 +8,26 @@ import AdmListaDeCursos from '../../componentes/AdmListaDeCursos';
 
 const PerfilDoUsuario = () => {
 
-  const { userName, modoEditCurso, setModoEditCurso, setCursos } = useContext(globalContext);
+  const { userName, modoEditCurso, setModoEditCurso, setCursos, professores, setProfessores } = useContext(globalContext);
 
   const [CadastrarOuEditar, setCadastrarOuEditar] = useState("Cadastrar");
   const [cursoInfo, setCursoInfo] = useState(cursoPadrao);
   const [modalExcluirCurso, setModalExcluirCurso] = useState(false);
 
-  function AddBackGroundBlur(){
+  function AddBackGroundBlur() {
     document.querySelector('#PerfilDoUsuario').classList.add('blur');
   }
-  
-  function RemoveBackGroundBlur(){
+
+  function RemoveBackGroundBlur() {
     document.querySelector('#PerfilDoUsuario').classList.remove('blur');
   }
 
   return (
     <div>
 
-        {modalExcluirCurso &&
-          <ModalExcluirCurso titulo={cursoInfo.titulo} id={cursoInfo.id} setModalExcluirCurso={setModalExcluirCurso} setCursos={setCursos} RemoveBackGroundBlur={RemoveBackGroundBlur} />
-        }
+      {modalExcluirCurso &&
+        <ModalExcluirCurso titulo={cursoInfo.titulo} id={cursoInfo.id} setModalExcluirCurso={setModalExcluirCurso} setCursos={setCursos} RemoveBackGroundBlur={RemoveBackGroundBlur} />
+      }
 
       <div id='PerfilDoUsuario' >
 
@@ -37,11 +37,33 @@ const PerfilDoUsuario = () => {
           <div className='admin'>
 
             <h1>Painel de Controle</h1>
-            <img src='https://res.cloudinary.com/di9oiqvom/image/upload/v1679184166/treinaRecife_quadrada_sowznb.png' width={200}/>
-            
+            <img src='https://res.cloudinary.com/di9oiqvom/image/upload/v1679184166/treinaRecife_quadrada_sowznb.png' width={200} />
+
             <AdmListaDeCursos setCadastrarOuEditar={setCadastrarOuEditar} setCursoInfo={setCursoInfo} setModalExcluirCurso={setModalExcluirCurso} AddBackGroundBlur={AddBackGroundBlur} />
 
             <h2 style={{ marginTop: 40 }}>Lista de Professores</h2>
+
+            <div className='admListaDeProfessores'>
+              {professores.map((professor) => {
+                return (
+                  <div className='admListaDeProfessoresCard' key={professor.id}>
+                    <img src={professor.imagem} />
+                    <div style={{ margin: 20 }}>
+                      <h4>{professor.nome}</h4>
+                      <p style={{ textAlign: "justify" }}>{professor.biografia}</p>
+                      <button className='botaoNeutro' onClick={() => { }}>Editar</button>
+                      <button className='botaoNeutro' onClick={() => { }}>Excluir</button>
+                    </div>
+                  </div>
+                )
+              })}
+
+              <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", margin: "auto" }}>
+                <button className='botaoNeutro' onClick={() => {  }}>Cadastrar Novo Professor</button>
+              </div>
+            </div>
+
+            
             <h2 style={{ marginTop: 40 }}>Solicitações de Matricula</h2>
             <h2 style={{ marginTop: 40 }}>Lista de Alunos</h2>
             <h2 style={{ marginTop: 40 }}>Lista de Depoimentos</h2>

@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { buscarCursos } from '../server/ServerFunctions';
+import { buscarCursos, buscarProfessores } from '../server/ServerFunctions';
 
 export const globalContext = createContext();
 
@@ -11,9 +11,11 @@ const GlobalVariables = ({ children }) => {
   const [modoEditCurso, setModoEditCurso] = useState(false);
   const [cursoSelecionado, setCursoSelecionado] = useState("BwcKtuaIEGGC1fTeqluO");
   const [cursos, setCursos] = useState([]);
+  const [professores, setProfessores] = useState([]);
 
   useEffect(() => {
-    buscarCursos(setCursos)
+    buscarCursos(setCursos);
+    buscarProfessores(setProfessores);
   }, [])
 
   // ****************** Ordena Cursos Por Data ******************* ///
@@ -32,7 +34,7 @@ const GlobalVariables = ({ children }) => {
   })
 
   return (
-    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData }}>
+    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData, professores, setProfessores }}>
       {children}
     </globalContext.Provider>
   )

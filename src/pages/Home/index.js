@@ -67,9 +67,9 @@ const Home = () => {
         <div className="row">
           <h2 style={{ textAlign: "center" }} className="pb-2 border-bottom">Depoimentos</h2>
           <div className="col-lg-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: 50 }}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Foto_Perfil.jpg" style={{ width: 150, height: 150, borderRadius: "50%" }} />
-            <h2 className="fw-normal">Diego Fischer</h2>
-            <p>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."</p>
+            <img src="https://cdn.mindminers.com/blog/uploads/2021/05/Dani-Almeida_auto_x1.png" style={{ width: 150, height: 150, borderRadius: "50%" }} />
+            <h2 className="fw-normal">Karilene Barros</h2>
+            <p>"Não tenho palavras para descever a oportunidade que me foi concedida para fazer parte desse curso e asim dar inicio a minha jornada em programação!"</p>
           </div>
           <div className="col-lg-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: 50 }}>
             <img src="https://www.labsaenzrenauld.com/wp-content/uploads/2020/10/Perfil-hombre-ba%CC%81sico_738242395.jpg" style={{ width: 150, height: 150, borderRadius: "50%" }} />

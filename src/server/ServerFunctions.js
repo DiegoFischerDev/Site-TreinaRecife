@@ -85,7 +85,7 @@ async function buscarCursos(setCursos) {
       });
 
       setCursos(lista);
-      console.log("atualizei")
+      console.log("atualizei Cursos")
 
     })
     .catch((error) => {
@@ -161,7 +161,7 @@ async function excluirCurso(id, setCursos) {
 
 }
 
-async function cadastrarProfessor(nome, imagem, biografia) {
+async function cadastrarProfessor(setProfessores, nome, imagem, biografia) {
 
   await addDoc(collection(db, "Professores"), {
     imagem: imagem,
@@ -170,10 +170,38 @@ async function cadastrarProfessor(nome, imagem, biografia) {
   })
     .then(() => {
       alert("Professor cadastrado com sucesso!");
+      buscarProfessores(setProfessores);
     })
     .catch((error) => {
       console.log(`deu erro: ${error}`)
     })
 }
 
-export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso, cadastrarProfessor }
+async function buscarProfessores(setProfessores) {
+
+  const professoresRef = collection(db, "Professores")
+
+  await getDocs(professoresRef)
+    .then((snapshot) => {
+      let lista = [];
+
+      snapshot.forEach(doc => {
+        lista.push({
+          id: doc.id,
+          imagem: doc.data().imagem,
+          nome: doc.data().nome,
+          biografia: doc.data().biografia
+        })
+      });
+
+      setProfessores(lista);
+      console.log("atualizei professores")
+
+    })
+    .catch((error) => {
+      console.log(`deu erro: ${error}`)
+    })
+
+}
+
+export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso, cadastrarProfessor, buscarProfessores }

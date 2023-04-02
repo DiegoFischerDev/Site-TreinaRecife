@@ -12,9 +12,9 @@ const Consultoria = () => {
       <div style={{flexDirection: "row", display: "flex", width: "100%", justifyContent: "center", marginTop: 30}}>
         <CardConsultoria style={{gap: 10}} titulo="Avançar" descricao="Treinamentos de novas tecnologias para colaboradores da área de tecnologia." imagem="https://www.codeideias.com/wp-content/uploads/2019/01/2.jpg" />
 
-        <CardConsultoria titulo="Migrar" descricao="Treinamentos partindo do zero, para funcionários de outras áreas da empresa." imagem="https://apexensino.com.br/wp-content/uploads/2019/02/iStock-1017296544-1024x683-1024x640.jpg" />
+        <CardConsultoria titulo="Migrar" descricao="Treinamentos partindo do zero, para funcionários de outras áreas da empresa." imagem="https://res.cloudinary.com/di9oiqvom/image/upload/v1680396987/imagemMigrar_jdmzjj.png" />
 
-        <CardConsultoria titulo="Captar" descricao="Captar talentos oriundos de seleção externa, e capacitar sob medida para a sua empresa." imagem="https://3299491.fs1.hubspotusercontent-na1.net/hub/3299491/hubfs/voce-odeia-os-processos-seletivos-comuns-estas-startups-tambem.jpg?width=340&name=voce-odeia-os-processos-seletivos-comuns-estas-startups-tambem.jpg" />
+        <CardConsultoria titulo="Captar" descricao="Captar talentos oriundos de seleção externa, e capacitar sob medida para a sua empresa." imagem="https://apexensino.com.br/wp-content/uploads/2019/02/iStock-1017296544-1024x683-1024x640.jpg" />
       </div>
 
     </div>

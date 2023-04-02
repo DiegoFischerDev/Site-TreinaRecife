@@ -10,6 +10,7 @@
   --white: #FFFFFF;
   --green: #bffb6d;
   --darkGreen: #9efe16;
+  --lightBlue: #E8F0FE;
 
   --backEnd: #f8d0b2;
   --backEndHover: #f5c19a;
@@ -262,7 +263,7 @@ button:hover {
 .agendaDeCursosCard {
   border-radius: 10px;
   margin: 5px;
-  background-color: #E8F0FE;
+  background-color: var(--lightBlue);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -310,11 +311,42 @@ button:hover {
   width: 100%;
 }
 
-.admListaDeCursos{
+.admListaDeCursos {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
   width: 100%;
   margin-top: 40px;
+}
+
+.admListaDeProfessores{
+  max-width: 1000px;
+}
+
+.admListaDeProfessoresCard {
+  background-color: var(--lightBlue);
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.admListaDeProfessoresCard img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .admListaDeProfessoresCard {
+    flex-direction: column;
+  }
+
+  .admListaDeProfessoresCard img {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+  }
 }
