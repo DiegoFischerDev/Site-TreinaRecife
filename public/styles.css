@@ -413,8 +413,6 @@ button:hover {
   position: absolute;
   pointer-events: none;
   animation: animate 0.2s ease infinite;
-  transition: 0.1s;
-  z-index: -1;
 }
 
 @keyframes animate {
@@ -539,5 +537,44 @@ button:hover {
     width: 100%;
     height: 250px;
     border-radius: 5px;
+  }
+}
+
+.solicitacaoDeMatriculaContainer {
+  margin-top: 30px;
+  margin-inline: auto;
+  display: grid;
+  gap: 25px;
+  grid-template:
+  'myArea myArea myArea'
+  'myArea myArea myArea';
+}
+
+.solicitacaoDeMatriculaCard {
+  background-color: var(--lightBlue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+@media (max-width: 1000px) {
+  .solicitacaoDeMatriculaContainer {
+    grid-template:
+    'myArea myArea'
+    'myArea myArea';
+  }
+}
+
+@media (max-width: 700px) {
+  .solicitacaoDeMatriculaContainer {
+    gap: 15px;
+    grid-template:
+    'myArea'
+    'myArea';
   }
 }

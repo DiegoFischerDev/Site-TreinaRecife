@@ -36,8 +36,8 @@ function TrilhasContainer() {
     <div className="sectionTrilhas">
       <div>
         <div className="textContainer">
-          <h2>Inicie Sua Jornada na</h2>
-          <h2 style={{color: "yellow"}}>TREINA RECIFE</h2>
+          <h3 style={{color: "yellow"}}>Inicie Sua Jornada na</h3>
+          <img src="https://res.cloudinary.com/di9oiqvom/image/upload/v1679184166/treinaRecife_quadrada_sowznb.png" style={{width: 350}} />
           
           <div className="trilhas">
             <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>

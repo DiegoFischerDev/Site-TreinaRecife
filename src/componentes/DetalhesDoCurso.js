@@ -1,11 +1,28 @@
+import { useContext, useState } from 'react';
+import { globalContext } from "../contexts";
 
 function DetalhesDoCurso(props) {
+
+  const { professores } = useContext(globalContext);
 
   let desconto = "";
 
   if (props.cursoInfo.desconto > 0) {
     desconto = `De R$${props.cursoInfo.preco} por`;
   }
+
+  let dadosDoProfessor = {
+    id: '',
+    nome: '',
+    imagem: '',
+    biografia: ''
+  }
+
+  professores.map((professor)=>{
+    if (professor.id == props.cursoInfo.professor){
+      dadosDoProfessor = professor;
+    }
+  })
 
   return (
     <div>
@@ -31,7 +48,7 @@ function DetalhesDoCurso(props) {
                   <p className="card-title pricing-card-title" style={{ color: "red" }}>{desconto}</p>
                   <h1 className="card-title pricing-card-title">R${props.cursoInfo.preco - props.cursoInfo.desconto}</h1>
                   <ul className="list-unstyled mt-3 mb-4">
-                    <li>Professor {props.cursoInfo.professor}</li>
+                    <li>Professor {dadosDoProfessor.nome}</li>
                     <li>{props.cursoInfo.dias}</li>
                     <li>{props.cursoInfo.horario}</li>
                     <li>Total de {props.cursoInfo.totalDeSemanas} semanas</li>

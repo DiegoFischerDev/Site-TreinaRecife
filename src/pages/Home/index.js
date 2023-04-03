@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { globalContext } from "../../contexts";
-import Button from 'react-bootstrap/Button';
-import Carrossel from "../../componentes/Carrossel";
-import TrilhaCard from "../../componentes/TrilhaCard";
 
 const Home = () => {
 

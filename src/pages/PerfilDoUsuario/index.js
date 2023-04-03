@@ -6,6 +6,7 @@ import ModalExcluirCurso from '../../componentes/ModalExcluirCurso';
 import AdmListaDeCursos from '../../componentes/AdmListaDeCursos';
 import AdmListaDeProfessores from '../../componentes/AdmListaDeProfessores';
 import ModalExcluirProfessor from '../../componentes/ModalExcluirProfessor';
+import AdmSolicitacaoDeMatricula from '../../componentes/AdmSolicitacaoDeMatricula';
 
 const PerfilDoUsuario = () => {
 
@@ -38,9 +39,9 @@ const PerfilDoUsuario = () => {
 
             <AdmListaDeProfessores />
 
-            <h2 style={{ marginTop: 40 }}>Solicitações de Matricula</h2>
+            <AdmSolicitacaoDeMatricula />
+
             <h2 style={{ marginTop: 40 }}>Lista de Alunos</h2>
-            <h2 style={{ marginTop: 40 }}>Lista de Depoimentos</h2>
 
           </div>
         }
