@@ -578,3 +578,13 @@ button:hover {
     'myArea';
   }
 }
+
+.listaDeAlunosContainer {
+  background-color: var(--lightBlue);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.listaDeAlunosContainer table td {
+  padding-inline: 0 50px;
+}

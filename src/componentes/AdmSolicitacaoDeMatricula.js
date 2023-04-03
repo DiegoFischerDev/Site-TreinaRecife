@@ -50,9 +50,9 @@ function AdmSolicitacaoDeMatricula() {
       <h2 style={{ marginTop: 70, textAlign: "center" }}>Solicitações de Matricula</h2>
 
       <div className="solicitacaoDeMatriculaContainer">
-        {solicitacoesDeMatricula.map((solicitacao) => {
+        {solicitacoesDeMatricula.map((solicitacao, index) => {
           return (
-            <div className="solicitacaoDeMatriculaCard shadown">
+            <div key={index} className="solicitacaoDeMatriculaCard shadown">
               <h4><strong>{solicitacao.nome}</strong></h4>
               <span>Cpf: {solicitacao.cpf}</span>
               <span>Email: {solicitacao.email}</span>

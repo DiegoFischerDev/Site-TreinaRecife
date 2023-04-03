@@ -7,6 +7,7 @@ import AdmListaDeCursos from '../../componentes/AdmListaDeCursos';
 import AdmListaDeProfessores from '../../componentes/AdmListaDeProfessores';
 import ModalExcluirProfessor from '../../componentes/ModalExcluirProfessor';
 import AdmSolicitacaoDeMatricula from '../../componentes/AdmSolicitacaoDeMatricula';
+import AdmListaDeAlunos from '../../componentes/AdmListaDeAlunos';
 
 const PerfilDoUsuario = () => {
 
@@ -41,7 +42,7 @@ const PerfilDoUsuario = () => {
 
             <AdmSolicitacaoDeMatricula />
 
-            <h2 style={{ marginTop: 40 }}>Lista de Alunos</h2>
+            <AdmListaDeAlunos />
 
           </div>
         }
