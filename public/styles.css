@@ -4,13 +4,13 @@
   --dark: #212529;
   --primary: #ef9146;
   --secundary: #001681;
-  --grey: #EFEFEF;
+  --grey: #efefef;
   --darkGrey: #797979;
   --hover: #e8f0fe;
-  --white: #FFFFFF;
+  --white: #ffffff;
   --green: #bffb6d;
   --darkGreen: #9efe16;
-  --lightBlue: #E8F0FE;
+  --lightBlue: #e8f0fe;
 
   --backEnd: #f8d0b2;
   --backEndHover: #f5c19a;
@@ -32,8 +32,8 @@ body {
 }
 
 .shadown {
-  -webkit-box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.33); 
-  box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.33);
+  -webkit-box-shadow: 5px 5px 16px 5px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 5px 16px 5px rgba(0, 0, 0, 0.33);
 }
 
 a:-webkit-any-link {
@@ -50,9 +50,9 @@ button:hover {
   transition: 0.3s;
 }
 
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
   button {
-    opacity: 1; /* Por Causa do Toutch */ 
+    opacity: 1; /* Por Causa do Toutch */
   }
 }
 
@@ -134,7 +134,7 @@ button:hover {
   z-index: 2;
 }
 
-.NavMenu-container .logo{
+.NavMenu-container .logo {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -160,7 +160,7 @@ button:hover {
   align-items: center;
 }
 
-.link{
+.link {
   font-size: 15px;
   margin: 0 7px;
   text-decoration: none;
@@ -230,7 +230,7 @@ button:hover {
     color: var(--grey);
   }
 
-  .link{
+  .link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,8 +257,32 @@ button:hover {
   justify-content: center;
 }
 
-
 /* *************************** Cursos ****************************** */
+
+.agendaDeCursosContainer {
+  background-image: url(https://res.cloudinary.com/di9oiqvom/image/upload/v1680487452/star-wars-death-star-at-at-space-wallpaper-preview_pb1rq5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10px;
+}
+
+.cursoContainerYoda {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -6px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.cursosImagemYoda {
+  transform: scaleX(-1);
+  width: 300px;
+}
 
 .agendaDeCursosCard {
   border-radius: 10px;
@@ -279,7 +303,6 @@ button:hover {
 }
 
 @media (max-width: 1000px) {
-
   .agendaDeCursosCard {
     flex-direction: column;
   }
@@ -287,7 +310,172 @@ button:hover {
   .agendaCursosImgTituloContainer {
     flex-direction: column;
   }
+}
 
+@media (max-width: 600px) {
+
+  .agendaDeCursosContainer {
+    background-image: url(https://res.cloudinary.com/di9oiqvom/image/upload/v1680487454/bgTreinaRecifeMobile_kyibbf.jpg);
+  }
+
+  .cursosImagemYoda {
+    width: 250px;
+    margin-left: -30px;
+  }
+
+  .cursoContainerYoda {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: -6px;
+    margin-top: 30px;
+    padding: 0 0 0 80px;
+  }
+}
+
+/* *************************** Trilha de Cursos ****************************** */
+
+.sectionTrilhas {
+  position: relative;
+  width: 100%;
+  height: 1300px;
+  background-color: black;
+}
+
+.textContainer {
+  width: 100%;
+  padding: 100px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  z-index: 2;
+  color: white;
+  pointer-events: none;
+}
+
+.trilhas {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.arrowIcon {
+  animation: sobeDesce 0.8s ease infinite;
+}
+
+@keyframes sobeDesce {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.rocketContainer {
+  /* background-color: black; */
+  width: 100%;
+  height: 1300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+}
+
+.rocketContainer i {
+  position: absolute;
+  top: 0px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: animateStars linear infinite;
+}
+
+@keyframes animateStars {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1300px);
+  }
+}
+
+.rocketContainer .rocket {
+  position: absolute;
+  pointer-events: none;
+  animation: animate 0.2s ease infinite;
+  transition: 0.1s;
+  z-index: -1;
+}
+
+@keyframes animate {
+  0%,100% {
+    transform: translateY(-50px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-48px) translateX(-50%);
+  }
+}
+
+.rocketContainer .rocket::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 150px;
+  background: linear-gradient(#fcd607, transparent);
+  filter: blur(5px);
+}
+
+.rocketContainer .rocket::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 150px;
+  background: linear-gradient(#fcd607, transparent);
+  filter: blur(20px);
+}
+
+.rocketContainer:active .rocket::after,
+.rocketContainer:active .rocket::before {
+  background: linear-gradient(#fc7d07, transparent);
+  height: 250px;
+  filter: blur(5px);
+}
+
+@media (max-width: 800px) {
+  .trilhas {
+    flex-direction: column;
+  }
+
+  .sectionTrilhas {
+    height: 2000px;
+  }
+
+  .rocketContainer {
+    height: 2000px;
+  }
+
+  @keyframes animateStars {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(2000px);
+    }
+  }
 }
 
 /* *************************** Home ****************************** */
@@ -317,10 +505,10 @@ button:hover {
   align-items: center;
   margin: auto;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-.admListaDeProfessores{
+.admListaDeProfessores {
   max-width: 1000px;
 }
 

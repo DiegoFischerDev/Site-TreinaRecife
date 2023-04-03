@@ -2,9 +2,13 @@ import React, { useContext } from 'react';
 import { globalContext } from "../contexts";
 import { cursoPadrao } from '../mocks/cursos'
 
-function AdmListaDeCursos(props) {
+function AdmListaDeCursos() {
 
-  const { setModoEditCurso, cursosOrdenadosPorData } = useContext(globalContext);
+  const { cursosOrdenadosPorData, setModoEditCurso, setCursoInfo, setCadastrarOuEditar, setModalExcluirCurso } = useContext(globalContext);
+
+  function AddBackGroundBlur() {
+    document.querySelector('#PerfilDoUsuario').classList.add('blur');
+  }
 
   return (
     <div className='admListaDeCursos'>
@@ -20,8 +24,8 @@ function AdmListaDeCursos(props) {
               <span style={{ marginInline: 10, fontSize: 18 }}>Início: <strong>{curso.proximaTurma}</strong></span>
               <span style={{ marginInline: 10, fontSize: 18 }}>{curso.dias} {curso.horario}</span>
               <div>
-                <button className='botaoNeutro' onClick={() => { setModoEditCurso(true); props.setCadastrarOuEditar("Editar"); props.setCursoInfo(curso) }}>Editar</button>
-                <button className='botaoNeutro' onClick={() => { props.setCursoInfo(curso); props.setModalExcluirCurso(true); props.AddBackGroundBlur() }}>Excluir</button>
+                <button className='botaoNeutro' onClick={() => { setModoEditCurso(true); setCadastrarOuEditar("Editar"); setCursoInfo(curso) }}>Editar</button>
+                <button className='botaoNeutro' onClick={() => { setCursoInfo(curso); setModalExcluirCurso(true); AddBackGroundBlur() }}>Excluir</button>
                 <button className='botaoNeutro' onClick={() => { }}>Ver Alunos</button>
               </div>
             </div>
@@ -29,7 +33,7 @@ function AdmListaDeCursos(props) {
         })}
       </div>
       <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", margin: "auto" }}>
-        <button className='botaoNeutro' onClick={() => { setModoEditCurso(true); props.setCadastrarOuEditar("Cadastrar"); props.setCursoInfo(cursoPadrao) }}>Cadastrar Novo Curso</button>
+        <button className='botaoNeutro' onClick={() => { setModoEditCurso(true); setCadastrarOuEditar("Cadastrar"); setCursoInfo(cursoPadrao) }}>Cadastrar Novo Curso</button>
       </div>
     </div>
   )

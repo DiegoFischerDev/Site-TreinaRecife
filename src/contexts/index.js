@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { buscarCursos, buscarProfessores } from '../server/ServerFunctions';
+import { cursoPadrao } from '../mocks/cursos'
 
 export const globalContext = createContext();
 
@@ -7,11 +8,15 @@ const GlobalVariables = ({ children }) => {
 
   const [active, setActive] = useState("home");
   const handleClick = (event) => {setActive(event.target.name); document.querySelector('.dropdown-menu').classList.remove("show")};
+
   const [userName, setUserName] = useState('Admin');
   const [modoEditCurso, setModoEditCurso] = useState(false);
   const [cursoSelecionado, setCursoSelecionado] = useState("BwcKtuaIEGGC1fTeqluO");
   const [cursos, setCursos] = useState([]);
   const [professores, setProfessores] = useState([]);
+  const [cursoInfo, setCursoInfo] = useState(cursoPadrao);
+  const [CadastrarOuEditar, setCadastrarOuEditar] = useState("Cadastrar");
+  const [modalExcluirCurso, setModalExcluirCurso] = useState(false);
 
   useEffect(() => {
     buscarCursos(setCursos);
@@ -34,7 +39,7 @@ const GlobalVariables = ({ children }) => {
   })
 
   return (
-    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData, professores, setProfessores }}>
+    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData, professores, setProfessores, cursoInfo, setCursoInfo, CadastrarOuEditar, setCadastrarOuEditar, modalExcluirCurso, setModalExcluirCurso }}>
       {children}
     </globalContext.Provider>
   )

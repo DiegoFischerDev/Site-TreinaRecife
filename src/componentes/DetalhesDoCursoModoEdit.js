@@ -1,40 +1,43 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { editarCurso, cadastrarCurso } from '../server/ServerFunctions'
+import { globalContext } from "../contexts";
 
-function DetalhesDoCursoModoEdit(props) {
+function DetalhesDoCursoModoEdit() {
 
-  const idDoCurso = props.cursoInfo.id;
-  const [newTitulo, setNewTitulo] = useState(props.cursoInfo.titulo);
-  const [newProfessor, setNewProfessor] = useState(props.cursoInfo.professor);
-  const [newImagem, setNewImagem] = useState(props.cursoInfo.imagem);
-  const [newDescricao, setNewDescricao] = useState(props.cursoInfo.descricao);
-  const [newPublicoAlvo, setNewPublicoAlvo] = useState(props.cursoInfo.publicoAlvo);
-  const [newPreRequisitos, setNewPreRequisitos] = useState(props.cursoInfo.preRequisitos);
-  const [newEmenta, setNewEmenta] = useState(props.cursoInfo.ementa);
-  const [newPreco, setNewPreco] = useState(props.cursoInfo.preco);
-  const [newDesconto, setNewDesconto] = useState(props.cursoInfo.desconto);
-  const [newDias, setNewDias] = useState(props.cursoInfo.dias);
-  const [newHorario, setNewHorario] = useState(props.cursoInfo.horario);
-  const [newTotalDeSemanas, setNewTotalDeSemanas] = useState(props.cursoInfo.totalDeSemanas);
-  const [newProximaTurma, setNewProximaTurma] = useState(props.cursoInfo.proximaTurma);
+  const { cursoInfo, CadastrarOuEditar, setModoEditCurso, setCursos} = useContext(globalContext);
+
+  const idDoCurso = cursoInfo.id;
+  const [newTitulo, setNewTitulo] = useState(cursoInfo.titulo);
+  const [newProfessor, setNewProfessor] = useState(cursoInfo.professor);
+  const [newImagem, setNewImagem] = useState(cursoInfo.imagem);
+  const [newDescricao, setNewDescricao] = useState(cursoInfo.descricao);
+  const [newPublicoAlvo, setNewPublicoAlvo] = useState(cursoInfo.publicoAlvo);
+  const [newPreRequisitos, setNewPreRequisitos] = useState(cursoInfo.preRequisitos);
+  const [newEmenta, setNewEmenta] = useState(cursoInfo.ementa);
+  const [newPreco, setNewPreco] = useState(cursoInfo.preco);
+  const [newDesconto, setNewDesconto] = useState(cursoInfo.desconto);
+  const [newDias, setNewDias] = useState(cursoInfo.dias);
+  const [newHorario, setNewHorario] = useState(cursoInfo.horario);
+  const [newTotalDeSemanas, setNewTotalDeSemanas] = useState(cursoInfo.totalDeSemanas);
+  const [newProximaTurma, setNewProximaTurma] = useState(cursoInfo.proximaTurma);
 
   const [showModalEditarImagem, setShowModalEditarImagem] = useState(false);
 
 
   function HandleEnviar() {
-    if(props.CadastrarOuEditar == "Editar"){
-      editarCurso(props.setCursos, idDoCurso, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
+    if(CadastrarOuEditar == "Editar"){
+      editarCurso(setCursos, idDoCurso, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
     }
-    if(props.CadastrarOuEditar == "Cadastrar"){
-      cadastrarCurso(props.setCursos, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
+    if(CadastrarOuEditar == "Cadastrar"){
+      cadastrarCurso(setCursos, newImagem, newTitulo, newProfessor, newPreco, newDesconto, newDias, newHorario, newTotalDeSemanas, newProximaTurma, newDescricao, newPublicoAlvo, newPreRequisitos, newEmenta);
     }
-    props.setModoEditCurso(false);
+    setModoEditCurso(false);
   }
 
   let TextDesconto = "";
 
   if (newDesconto > 0) {
-    TextDesconto = `De R$${props.cursoInfo.preco} por`;
+    TextDesconto = `De R$${cursoInfo.preco} por`;
   }
 
 
@@ -46,7 +49,7 @@ function DetalhesDoCursoModoEdit(props) {
 
           <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
             <input style={{width: "100%"}} className="display-4 fw-normal" onChange={(e) => { setNewTitulo(e.target.value) }} value={newTitulo} />
-            {/* <h1 className="display-4 fw-normal">{props.cursoInfo.titulo}</h1> */}
+            {/* <h1 className="display-4 fw-normal">{cursoInfo.titulo}</h1> */}
             <textarea style={{ width: "100%", height: 100, marginTop: 40 }} className="s-5 text-muted" onChange={(e) => { setNewDescricao(e.target.value) }} value={newDescricao} />
           </div>
         </header>
@@ -121,8 +124,8 @@ function DetalhesDoCursoModoEdit(props) {
         </div>
       </div>
       <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", marginTop: 150, marginInline: "auto" }}>
-        <button onClick={HandleEnviar} style={{ padding: 20, backgroundColor: "greenyellow", borderRadius: 15 }}>{props.CadastrarOuEditar == "Editar" && "Editar Curso"}{props.CadastrarOuEditar == "Cadastrar" && "Cadastrar Curso"}</button>
-        <button onClick={() => { props.setModoEditCurso(false) }} style={{ padding: 20, backgroundColor: "#f8d0b2", borderRadius: 15 }}>Cancelar</button>
+        <button onClick={HandleEnviar} style={{ padding: 20, backgroundColor: "greenyellow", borderRadius: 15 }}>{CadastrarOuEditar == "Editar" && "Editar Curso"}{CadastrarOuEditar == "Cadastrar" && "Cadastrar Curso"}</button>
+        <button onClick={() => { setModoEditCurso(false) }} style={{ padding: 20, backgroundColor: "#f8d0b2", borderRadius: 15 }}>Cancelar</button>
       </div>
     </div>
   )

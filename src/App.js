@@ -15,7 +15,7 @@ const App = () => {
     <GlobalVariables>
     <BrowserRouter>
       <NavMenu />
-      <div style={{paddingTop: 65}}>
+      <div style={{paddingTop: 0}}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cursos" element={<Cursos />} />
