@@ -17,6 +17,7 @@ const GlobalVariables = ({ children }) => {
   const [cursoInfo, setCursoInfo] = useState(cursoPadrao);
   const [CadastrarOuEditar, setCadastrarOuEditar] = useState("Cadastrar");
   const [modalExcluirCurso, setModalExcluirCurso] = useState(false);
+  const [modalExcluirProfessor, setModalExcluirProfessor] = useState('hiden');
 
   useEffect(() => {
     buscarCursos(setCursos);
@@ -39,7 +40,7 @@ const GlobalVariables = ({ children }) => {
   })
 
   return (
-    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData, professores, setProfessores, cursoInfo, setCursoInfo, CadastrarOuEditar, setCadastrarOuEditar, modalExcluirCurso, setModalExcluirCurso }}>
+    <globalContext.Provider value={{ handleClick, active, setActive, userName, setUserName, cursoSelecionado, setCursoSelecionado, cursos, modoEditCurso, setModoEditCurso, setCursos, cursosOrdenadosPorData, professores, setProfessores, cursoInfo, setCursoInfo, CadastrarOuEditar, setCadastrarOuEditar, modalExcluirCurso, setModalExcluirCurso, modalExcluirProfessor, setModalExcluirProfessor }}>
       {children}
     </globalContext.Provider>
   )

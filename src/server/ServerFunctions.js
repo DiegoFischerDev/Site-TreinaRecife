@@ -158,7 +158,6 @@ async function excluirCurso(id, setCursos) {
     .catch((error) => {
       alert(`Erro ao tentar excluir: ${error}`)
     })
-
 }
 
 async function cadastrarProfessor(setProfessores, nome, imagem, biografia) {
@@ -201,7 +200,36 @@ async function buscarProfessores(setProfessores) {
     .catch((error) => {
       console.log(`deu erro: ${error}`)
     })
-
 }
 
-export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso, cadastrarProfessor, buscarProfessores }
+async function excluirProfessor(id, setProfessores) {
+  const docRef = doc(db, "Professores", id)
+
+  await deleteDoc(docRef)
+    .then(() => {
+      buscarProfessores(setProfessores);
+      alert("Professor Excluido Com Sucesso")
+    })
+    .catch((error) => {
+      alert(`Erro ao tentar excluir: ${error}`)
+    })
+}
+
+async function editarProfessor(setProfessores, idDoProfessor, newImagem, newNome, newBiografia) {
+  const docRef = doc(db, "Professores", idDoProfessor)
+
+  await updateDoc(docRef, {
+    imagem: newImagem,
+    nome: newNome,
+    biografia: newBiografia
+  })
+    .then(() => {
+      alert(`Professor ${newNome} Atualizado!`);
+      buscarProfessores(setProfessores);
+    })
+    .catch((error) => {
+      console.log(`deu erro: ${error}`)
+    })
+}
+
+export { buscarCursos, cadastrarCurso, logarUsuario, cadastrarUsuario, editarCurso, excluirCurso, cadastrarProfessor, buscarProfessores, excluirProfessor, editarProfessor }

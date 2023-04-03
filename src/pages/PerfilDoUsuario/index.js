@@ -5,10 +5,11 @@ import { globalContext } from "../../contexts";
 import ModalExcluirCurso from '../../componentes/ModalExcluirCurso';
 import AdmListaDeCursos from '../../componentes/AdmListaDeCursos';
 import AdmListaDeProfessores from '../../componentes/AdmListaDeProfessores';
+import ModalExcluirProfessor from '../../componentes/ModalExcluirProfessor';
 
 const PerfilDoUsuario = () => {
 
-  const { userName, modoEditCurso, modalExcluirCurso } = useContext(globalContext);
+  const { userName, modoEditCurso, modalExcluirCurso, modalExcluirProfessor } = useContext(globalContext);
 
   return (
     <div>
@@ -17,9 +18,15 @@ const PerfilDoUsuario = () => {
         <ModalExcluirCurso />
       }
 
+      {modalExcluirProfessor != 'hiden' &&
+        <ModalExcluirProfessor />
+      }
+
       <div id='PerfilDoUsuario' >
 
-        {!modoEditCurso && userName == 'Login' && <LoginForm />}
+        {!modoEditCurso && userName == 'Login' &&
+          <LoginForm />
+        }
 
         {!modoEditCurso && userName == 'Admin' &&
           <div className='admin'>
