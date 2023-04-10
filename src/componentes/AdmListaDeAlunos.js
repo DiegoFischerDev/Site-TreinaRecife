@@ -189,6 +189,7 @@ function AdmListaDeAlunos() {
             )
           })}
         </table>
+        <button>Selecionar Todos</button>
       </div>
 
       <button className="botaoNeutro">Enviar Email Para Alunos Selecionados</button>
