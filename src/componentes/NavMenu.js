@@ -35,7 +35,7 @@ function NavMenu() {
         </div>
         <div className="NavMenu-Login">
           <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Treina Recife Logo" />
-          <Link name="perfildousuario" className="navbar-brand" to="/perfildousuario" onClick={handleClick}>{userName}</Link>
+          <Link name="perfildousuario" className="navbar-brand" to="/perfildousuario" onClick={handleClick} style={{color: "orange"}}>Dashboard (Backend)</Link>
         </div>
       </div>
 
