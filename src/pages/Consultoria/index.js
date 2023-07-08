@@ -10,7 +10,7 @@ const Consultoria = () => {
       </p>
       </div>
       <div style={{flexDirection: "row", display: "flex", width: "100%", justifyContent: "center", marginTop: 30}}>
-        <CardConsultoria style={{gap: 10}} titulo="Avançar" descricao="Treinamentos de novas tecnologias para colaboradores da área de tecnologia." imagem="https://www.codeideias.com/wp-content/uploads/2019/01/2.jpg" />
+        <CardConsultoria style={{gap: 10}} titulo="Avançar" descricao="Treinamentos de novas tecnologias para colaboradores da área de tecnologia." imagem="https://mobiliza.com.br/wp-content/uploads/2020/08/achievement-3468104.jpg" />
 
         <CardConsultoria titulo="Migrar" descricao="Treinamentos partindo do zero, para funcionários de outras áreas da empresa." imagem="https://res.cloudinary.com/di9oiqvom/image/upload/v1680396987/imagemMigrar_jdmzjj.png" />
 
