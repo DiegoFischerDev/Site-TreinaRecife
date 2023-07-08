@@ -9,7 +9,7 @@ Visite the page: https://site-treina-recife.vercel.app/.
 
 ## Description
 
-This project is a website for "TreinaRecife - Cursos de Tecnologia em Recife". For backend services is used Firebase. To manipulate the backend data, this project has a dashboard that you can acesse by using admin@admin.com and password: 123456
+This project is a website for "TreinaRecife - Cursos de Tecnologia em Recife". For backend services is used Firebase. To manipulate the backend data, this project has a dashboard that can be accessed using email admin@admin.com and password: 123456
 
 ## Technologies Used
 
