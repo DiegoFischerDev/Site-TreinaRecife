@@ -14,15 +14,15 @@ function NavMenu() {
 
       <div className='logo'>
         <img src="https://res.cloudinary.com/di9oiqvom/image/upload/v1678321594/download_srp5sa.png" />
-        <Link name="home" className={active == "home" ? 'link active' : 'link'} onClick={handleClick} to="/" ><h2>Treina Recife</h2></Link>
+        <Link name="home" className={active === "home" ? 'link active' : 'link'} onClick={handleClick} to="/" ><h2>Treina Recife</h2></Link>
       </div>
 
       <div className='menu-itens-web'>
-        <Link name="home" className={(active == "home" || !active) ? 'link active' : 'link'} onClick={handleClick} to="/" >Home</Link>
-        <Link name="cursos" className={active == "cursos" ? 'link active' : 'link'} onClick={handleClick} to="/cursos">Cursos</Link>
-        <Link name="consultoria" className={active == "consultoria" ? 'link active' : 'link'} onClick={handleClick} to="/consultoria">Consultoria</Link>
+        <Link name="home" className={(active === "home" || !active) ? 'link active' : 'link'} onClick={handleClick} to="/" >Home</Link>
+        <Link name="cursos" className={active === "cursos" ? 'link active' : 'link'} onClick={handleClick} to="/cursos">Cursos</Link>
+        <Link name="consultoria" className={active === "consultoria" ? 'link active' : 'link'} onClick={handleClick} to="/consultoria">Consultoria</Link>
         <div className="item dropdown">
-          <Link className={active == "outros" ? 'link dropdown-toggle active' : 'link dropdown-toggle'} role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className={active === "outros" ? 'link dropdown-toggle active' : 'link dropdown-toggle'} role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Outros
           </Link>
           <ul className="dropdown-menu bg-dark">
@@ -41,15 +41,18 @@ function NavMenu() {
 
       <div className='menu-itens-mobile'>
         <div className="item dropdown">
-          <Link className={active == "outros" ? 'link dropdown-toggle active' : 'link dropdown-toggle'} role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</Link>
+          <Link className={active === "outros" ? 'link dropdown-toggle active' : 'link dropdown-toggle'} role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</Link>
           <ul className="dropdown-menu bg-dark">
             <li>
-              <Link name="home" className={(active == "home" || !active) ? 'link active' : 'link'} onClick={handleClick} to="/" >Home</Link></li>
+              <Link name="home" className={(active === "home" || !active) ? 'link active' : 'link'} onClick={handleClick} to="/" >Home</Link></li>
             <li>
-              <Link name="cursos" className={active == "cursos" ? 'link active' : 'link'} onClick={handleClick} to="/cursos">Cursos</Link>
+              <Link name="cursos" className={active === "cursos" ? 'link active' : 'link'} onClick={handleClick} to="/cursos">Cursos</Link>
             </li>
             <li>
-              <Link name="consultoria" className={active == "consultoria" ? 'link active' : 'link'} onClick={handleClick} to="/consultoria">Consultoria</Link>
+              <Link name="consultoria" className={active === "consultoria" ? 'link active' : 'link'} onClick={handleClick} to="/consultoria">Consultoria</Link>
+            </li>
+            <li>
+              <Link name="login" className={active === "login" ? 'link active' : 'link'} onClick={handleClick} to="/perfildousuario">Login</Link>
             </li>
           </ul>
         </div>
