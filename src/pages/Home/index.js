@@ -64,7 +64,7 @@ const Home = () => {
         <div className="row">
           <h2 style={{ textAlign: "center" }} className="pb-2 border-bottom">Depoimentos</h2>
           <div className="col-lg-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: 50 }}>
-            <img src="https://cdn.mindminers.com/blog/uploads/2021/05/Dani-Almeida_auto_x1.png" style={{ width: 150, height: 150, borderRadius: "50%" }} />
+            <img src="https://www.lavanguardia.com/files/article_gallery_microformat/uploads/2018/07/25/5fa43a4a54014.jpeg" style={{ width: 150, height: 150, borderRadius: "50%" }} />
             <h2 className="fw-normal">Karilene Barros</h2>
             <p>"Não tenho palavras para descever a oportunidade que me foi concedida para fazer parte desse curso e asim dar inicio a minha jornada em programação!"</p>
           </div>
