@@ -31,7 +31,6 @@ const LoginForm = () => {
         <br /><br />
         <button className="w-100 btn btn-lg btn-primary" onClick={() => { logarUsuario(email, senha, setUserName, setAdmLogado) }}>Login</button><br /><br />
         {/* <button className="w-100 btn btn-lg btn-primary" onClick={()=>{cadastrarUsuario(email, senha)}}>Cadastrar</button> */}
-        <p className="mt-5 mb-3 text-muted">Treina Recife &copy; Todos os direitos reservados</p>
       </div>
     </div>
   )

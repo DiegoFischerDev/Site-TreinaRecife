@@ -26,7 +26,8 @@ const Rodape = () => {
 
 
         </ul>
-        <p style={{ textAlign: "center" }} className="RodapeText RodapeEnd">&copy; 2023 Treina Recife</p>
+        <p style={{ textAlign: "center", marginBottom: 0 }} className="RodapeText RodapeEnd">&copy; 2023 Treina Recife</p>
+        <p style={{ textAlign: "center", marginTop: 0 }} className="RodapeText RodapeEnd">Desenvolvido por &nbsp;<a href="https://diegofischer.dev" target="_blank">DiegoFischer.dev</a></p>
       </footer>
     </div>
   )
