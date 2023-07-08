@@ -33,7 +33,7 @@ const PerfilDoUsuario = () => {
         {!modoEditCurso && userName == 'Admin' &&
           <div className='admin'>
 
-            <h1>Painel de Controle</h1>
+            <h1>Dashboard (Backend)</h1>
             <img src='https://res.cloudinary.com/di9oiqvom/image/upload/v1679184166/treinaRecife_quadrada_sowznb.png' width={200} />
 
             <AdmListaDeCursos />

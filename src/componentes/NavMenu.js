@@ -52,7 +52,7 @@ function NavMenu() {
               <Link name="consultoria" className={active === "consultoria" ? 'link active' : 'link'} onClick={handleClick} to="/consultoria">Consultoria</Link>
             </li>
             <li>
-              <Link name="login" className={active === "login" ? 'link active' : 'link'} onClick={handleClick} to="/perfildousuario">Login</Link>
+              <Link name="login" className={active === "login" ? 'link active' : 'link'} onClick={handleClick} style={{color: "orange"}} to="/perfildousuario">Dashboard (Backend)</Link>
             </li>
           </ul>
         </div>
