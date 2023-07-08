@@ -16,6 +16,9 @@ const LoginForm = () => {
         <img className="mb-4" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1678321594/download_srp5sa.png" alt="Logo" width="70" height="70" />
         <h1 className="h3 mb-3 fw-normal">Faça seu Login</h1>
 
+        <p style={{color: "red", marginBottom: 0}}>admin@admin.com</p>
+        <p style={{color: "red"}}>Password: 123456</p>
+
         <div className="form-floating">
           <input value={email} type="text" className="form-control" placeholder="name@example.com" onChange={(e) => { setEmail(e.target.value) }} />
           <label htmlFor="floatingInput">Email</label>

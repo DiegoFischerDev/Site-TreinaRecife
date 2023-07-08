@@ -7,7 +7,7 @@ export const globalContext = createContext();
 const GlobalVariables = ({ children }) => {
 
   const [active, setActive] = useState("home");
-  const handleClick = (event) => {setActive(event.target.name); document.querySelector('.dropdown-menu').classList.remove("show")};
+  const handleClick = (event) => { setActive(event.target.name); document.querySelector('.dropdown-menu').classList.remove("show") };
 
   const [userName, setUserName] = useState('Login');
   const [modoEditCurso, setModoEditCurso] = useState(false);
@@ -17,7 +17,7 @@ const GlobalVariables = ({ children }) => {
   const [cursoInfo, setCursoInfo] = useState(cursoPadrao);
   const [CadastrarOuEditar, setCadastrarOuEditar] = useState("Cadastrar");
   const [modalExcluirCurso, setModalExcluirCurso] = useState(false);
-  const [modalExcluirProfessor, setModalExcluirProfessor] = useState('hiden');
+  const [modalExcluirProfessor, setModalExcluirProfessor] = useState('hidden');
 
   useEffect(() => {
     buscarCursos(setCursos);
@@ -28,12 +28,12 @@ const GlobalVariables = ({ children }) => {
 
   let array;
   let listaDeCursos = cursos;
-  listaDeCursos.map((curso)=>{
+  listaDeCursos.map((curso) => {
     array = curso.proximaTurma.split('/')
     curso.DataDaProximaTurma = new Date(`${array[2]}-${array[1]}-${array[0]}`)
   })
 
-  let cursosOrdenadosPorData = listaDeCursos.sort(function(a, b){
+  let cursosOrdenadosPorData = listaDeCursos.sort(function (a, b) {
     if (a.DataDaProximaTurma > b.DataDaProximaTurma) return 1;
     if (a.DataDaProximaTurma < b.DataDaProximaTurma) return -1;
     if (a.DataDaProximaTurma == b.DataDaProximaTurma) return 0;

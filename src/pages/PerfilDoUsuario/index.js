@@ -14,13 +14,13 @@ const PerfilDoUsuario = () => {
   const { userName, modoEditCurso, modalExcluirCurso, modalExcluirProfessor } = useContext(globalContext);
 
   return (
-    <div>
+    <div style={{paddingTop: 30}}>
 
       {modalExcluirCurso &&
         <ModalExcluirCurso />
       }
 
-      {modalExcluirProfessor != 'hiden' &&
+      {modalExcluirProfessor != 'hidden' &&
         <ModalExcluirProfessor />
       }
 

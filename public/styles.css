@@ -486,6 +486,7 @@ button:hover {
   max-width: 500px;
   display: flex;
   margin: auto;
+  padding-top: 30px;
 }
 
 /* *************************** PerfilDoUsuario ****************************** */

@@ -11,8 +11,8 @@ function AdmListaDeProfessores() {
   const [newImagem, setNewImagem] = useState('');
   const [newNome, setNewNome] = useState('');
   const [newBiografia, setNewBiografia] = useState('');
-  const [modalEditarImagem, setModalEditarImagem] = useState('hiden');
-  const [modalCadastrarProfessor, setModalCadastrarProfessor] = useState('hiden');
+  const [modalEditarImagem, setModalEditarImagem] = useState('hidden');
+  const [modalCadastrarProfessor, setModalCadastrarProfessor] = useState('hidden');
 
   function AddBackGroundBlur() {
     document.querySelector('#PerfilDoUsuario').classList.add('blur');
@@ -33,7 +33,7 @@ function AdmListaDeProfessores() {
                   <div style={{ margin: 20 }}>
                     <h4>{professor.nome}</h4>
                     <p style={{ textAlign: "justify" }}>{professor.biografia}</p>
-                    <button className='botaoNeutro' onClick={() => { setNewNome(professor.nome); setNewImagem(professor.imagem); setNewBiografia(professor.biografia); SetModoEditProfessor(professor.id); setModalCadastrarProfessor('hiden') }}>Editar</button>
+                    <button className='botaoNeutro' onClick={() => { setNewNome(professor.nome); setNewImagem(professor.imagem); setNewBiografia(professor.biografia); SetModoEditProfessor(professor.id); setModalCadastrarProfessor('hidden') }}>Editar</button>
                     <button className='botaoNeutro' onClick={() => { AddBackGroundBlur(); setModalExcluirProfessor({ id: professor.id, nome: professor.nome }) }}>Excluir</button>
                   </div>
                 </div>
@@ -47,18 +47,18 @@ function AdmListaDeProfessores() {
                     <input style={{ width: 300 }} onChange={(e) => { setNewNome(e.target.value) }} value={newNome} placeholder={professor.nome} /><br />
                     <textarea style={{ width: '100%', height: 150 }} onChange={(e) => { setNewBiografia(e.target.value) }} value={newBiografia} placeholder={professor.biografia} />
                     <br />
-                    <button className='botaoNeutro botaoGreen' onClick={() => {editarProfessor(setProfessores, professor.id, newImagem, newNome, newBiografia); SetModoEditProfessor('') }}>Salvar</button>
+                    <button className='botaoNeutro botaoGreen' onClick={() => { editarProfessor(setProfessores, professor.id, newImagem, newNome, newBiografia); SetModoEditProfessor('') }}>Salvar</button>
                     <button className='botaoNeutro' onClick={() => { SetModoEditProfessor('') }}>Cancelar</button>
                   </div>
                 </div>
               }
 
-              {modalEditarImagem != 'hiden' && modoEditProfessor == professor.id &&
+              {modalEditarImagem != 'hidden' && modoEditProfessor == professor.id &&
                 <div id="ModalExcluirCurso" className='shadown modalExcluirCurso' style={{ height: 300 }}>
                   <div><p>Editar Imagem de <strong>{professor.nome}</strong></p></div>
                   <textarea onChange={(e) => { setNewImagem(e.target.value) }} value={newImagem}></textarea>
-                  <button className='botaoGreen' onClick={() => { setModalEditarImagem('hiden') }}>Salvar</button>
-                  <button className='botaoNeutro' onClick={() => { setModalEditarImagem('hiden') }}>Cancelar</button>
+                  <button className='botaoGreen' onClick={() => { setModalEditarImagem('hidden') }}>Salvar</button>
+                  <button className='botaoNeutro' onClick={() => { setModalEditarImagem('hidden') }}>Cancelar</button>
                 </div>
               }
 
@@ -68,7 +68,7 @@ function AdmListaDeProfessores() {
         })}
 
         <div style={{ width: 400, display: "flex", justifyContent: "space-evenly", margin: "auto" }}>
-          <button className='botaoNeutro' onClick={() => { setNewImagem('https://presidentekennedy.es.leg.br/images/perfil-neutro.jpg'); setNewNome(''); setNewBiografia(''); setModalCadastrarProfessor('show'); SetModoEditProfessor('hiden') }}>Cadastrar Novo Professor</button>
+          <button className='botaoNeutro' onClick={() => { setNewImagem('https://presidentekennedy.es.leg.br/images/perfil-neutro.jpg'); setNewNome(''); setNewBiografia(''); setModalCadastrarProfessor('show'); SetModoEditProfessor('hidden') }}>Cadastrar Novo Professor</button>
         </div>
 
         {modalCadastrarProfessor == 'show' &&
@@ -79,19 +79,19 @@ function AdmListaDeProfessores() {
               <input style={{ width: 300 }} onChange={(e) => { setNewNome(e.target.value) }} value={newNome} placeholder={'Digite o Nome Do Professor'} /><br />
               <textarea style={{ width: '100%', height: 150 }} onChange={(e) => { setNewBiografia(e.target.value) }} value={newBiografia} placeholder={'Digite a Biografia do Professor'} />
               <br />
-              <button className='botaoNeutro botaoGreen' onClick={() => { setModalCadastrarProfessor('hiden'); cadastrarProfessor(setProfessores, newNome, newImagem, newBiografia) }}>Cadastrar Professor</button>
-              <button className='botaoNeutro' onClick={() => { setModalCadastrarProfessor('hiden') }}>Cancelar</button>
+              <button className='botaoNeutro botaoGreen' onClick={() => { setModalCadastrarProfessor('hidden'); cadastrarProfessor(setProfessores, newNome, newImagem, newBiografia) }}>Cadastrar Professor</button>
+              <button className='botaoNeutro' onClick={() => { setModalCadastrarProfessor('hidden') }}>Cancelar</button>
             </div>
           </div>
         }
 
         {modalEditarImagem == 'show' &&
-              <div id="ModalExcluirCurso" className='shadown modalExcluirCurso' style={{ height: 300 }}>
-              <div><p>Editar Imagem de <strong>{newNome}</strong></p></div>
-              <textarea onChange={(e) => { setNewImagem(e.target.value) }} value={newImagem}></textarea>
-              <button className='botaoGreen' onClick={() => { setModalEditarImagem('hiden') }}>Salvar</button>
-              <button className='botaoNeutro' onClick={() => { setModalEditarImagem('hiden') }}>Cancelar</button>
-            </div>}
+          <div id="ModalExcluirCurso" className='shadown modalExcluirCurso' style={{ height: 300 }}>
+            <div><p>Editar Imagem de <strong>{newNome}</strong></p></div>
+            <textarea onChange={(e) => { setNewImagem(e.target.value) }} value={newImagem}></textarea>
+            <button className='botaoGreen' onClick={() => { setModalEditarImagem('hidden') }}>Salvar</button>
+            <button className='botaoNeutro' onClick={() => { setModalEditarImagem('hidden') }}>Cancelar</button>
+          </div>}
       </div>
     </div>
   )

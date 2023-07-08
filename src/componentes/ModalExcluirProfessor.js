@@ -15,8 +15,8 @@ function ModalExcluirProfessor() {
       <span>Tem Certeza que deseja excluir o Professor</span>
       <span><strong style={{ fontSize: 20 }}>{modalExcluirProfessor.nome}</strong>?</span>
       <div>
-        <button className='botaoNeutro' style={{ paddingInline: 18 }} onClick={() => { excluirProfessor(modalExcluirProfessor.id, setProfessores); setModalExcluirProfessor('hiden'); RemoveBackGroundBlur() }} >Excluir</button>
-        <button className='botaoNeutro' onClick={() => { setModalExcluirProfessor('hiden'); RemoveBackGroundBlur() }}>Cancelar</button>
+        <button className='botaoNeutro' style={{ paddingInline: 18 }} onClick={() => { excluirProfessor(modalExcluirProfessor.id, setProfessores); setModalExcluirProfessor('hidden'); RemoveBackGroundBlur() }} >Excluir</button>
+        <button className='botaoNeutro' onClick={() => { setModalExcluirProfessor('hidden'); RemoveBackGroundBlur() }}>Cancelar</button>
       </div>
     </div>
   )
