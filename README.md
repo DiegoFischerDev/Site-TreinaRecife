@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# WebPage TreinaRecife
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visite the page: https://site-treina-recife.vercel.app/.
 
-## Available Scripts
+![TreinaRecife WebPage Screenshot](https://github.com/DiegoFischerDev/Site-TreinaRecife/blob/main/src/assets/screencapture-site-treina-recife-vercel-app-2023-07-08-16_52_36.png)
+![TreinaRecife WebPage Screenshot](https://github.com/DiegoFischerDev/Site-TreinaRecife/blob/main/src/assets/screencapture-site-treina-recife-vercel-app-cursos-2023-07-08-16_52_57.png)
+![TreinaRecife WebPage Screenshot](https://github.com/DiegoFischerDev/Site-TreinaRecife/blob/main/src/assets/screencapture-site-treina-recife-vercel-app-perfildousuario-2023-07-08-16_53_19.png)
 
-In the project directory, you can run:
+
+## Description
+
+This project is a website for "TreinaRecife - Cursos de Tecnologia em Recife". For backend services is used Firebase. To manipulate the backend data, this project has a dashboard that you can acesse by using admin@admin.com and password: 123456
+
+## Technologies Used
+
+The website is built using the following technologies:
+
+- React
+- CSS
+- JavaScript
+- Bootstrap
+- Firebase
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/DiegoFischerDev/Site-TreinaRecife.git`
+2. Navigate to the project directory: `cd treinaRecife`
+3. In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. In your browser, acesse: http://localhost:3000/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+Once the project is running in your browser, you can navigate through the different sections using the navigation menu.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License
 
-### `npm run build`
+This project is licensed under the MIT License.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contact
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For more information or inquiries about the project, please contact the developer:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Name: Diego Fischer
+- Email: hello@diegofischer.dev
+- GitHub: [github.com/DiegoFischerDev](https://github.com/DiegoFischerDev)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to reach out with any questions or feedback.
